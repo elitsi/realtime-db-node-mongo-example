@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 interface IController {
-    path: string;
+    paths: any;
     router: Router;
 }
 

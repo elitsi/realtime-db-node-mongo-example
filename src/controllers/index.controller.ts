@@ -3,7 +3,11 @@ import Controller from '../interfaces/controller.interface';
 import * as path from 'path';
 
 export default class IndexController implements Controller {
-    public path = '/';
+    public paths = {
+        get: {
+            index: '/'
+        }
+    }
     public router = express.Router();
 
     constructor() {
@@ -11,8 +15,8 @@ export default class IndexController implements Controller {
     }
 
     private initializeRoutes() {
-        this.router.get(`${this.path}`, this.getMainPage);
-        this.router.get(`${this.path}home`, this.getMainPage);
+        this.router.get(this.paths.get.index, this.getMainPage);
+        this.router.get(`${this.paths.get.index}home`, this.getMainPage);
 
     }
 
